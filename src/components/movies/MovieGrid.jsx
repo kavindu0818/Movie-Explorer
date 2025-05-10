@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MovieCard from './MovieCard';
 
 const MovieGrid = ({ movies, loading, error, onLoadMore, hasMore = false }) => {
-  // You can remove the columns state here, as it is not being used
+
   useEffect(() => {
     const handleResize = () => {
 
