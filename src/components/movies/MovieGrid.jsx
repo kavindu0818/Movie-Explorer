@@ -6,7 +6,7 @@ const MovieGrid = ({ movies, loading, error, onLoadMore, hasMore = false }) => {
   // You can remove the columns state here, as it is not being used
   useEffect(() => {
     const handleResize = () => {
-      // Handle screen size changes, but without storing `columns` if it's not used.
+
       if (window.innerWidth < 640) {
         // Adjust grid for mobile devices
       } else if (window.innerWidth < 768) {

@@ -53,7 +53,7 @@ const MovieCard = ({ movie }) => {
             <span>{movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A'}</span>
           </div>
 
-         
+
           {isAuthenticated && (
             <button 
               onClick={handleFavoriteClick}
