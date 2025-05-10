@@ -33,11 +33,12 @@ const MovieCard = ({ movie }) => {
       <Link to={`/movie/${movie.id}`} className="block relative">
         <div className="overflow-hidden aspect-[2/3] relative">
           <img 
-            src={getImageUrl(movie.poster_path)} 
+            src={getImageUrl(movie.poster_path)}
             alt={movie.title}
             className="w-full h-full object-cover"
           />
 
+          {/* Hover overlay */}
           <div 
             className={`absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300 ${
               isHovered ? 'opacity-100' : 'opacity-0'
@@ -52,6 +53,7 @@ const MovieCard = ({ movie }) => {
             <span>{movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A'}</span>
           </div>
 
+          {/* Favorite button */}
           {isAuthenticated && (
             <button 
               onClick={handleFavoriteClick}
