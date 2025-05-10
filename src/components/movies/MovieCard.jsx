@@ -38,7 +38,7 @@ const MovieCard = ({ movie }) => {
             className="w-full h-full object-cover"
           />
 
-          {/* Hover overlay */}
+
           <div 
             className={`absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300 ${
               isHovered ? 'opacity-100' : 'opacity-0'
