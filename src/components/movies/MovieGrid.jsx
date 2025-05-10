@@ -18,7 +18,7 @@ const MovieGrid = ({ movies, loading, error, onLoadMore, hasMore = false }) => {
       }
     };
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
