@@ -34,7 +34,6 @@ const moviesSlice = createSlice({
       if (action.payload.type === 'trending') {
         state.trending = action.payload.results;
       } else if (action.payload.type === 'search') {
-        // Append results for pagination if requested
         state.searchResults = action.payload.append 
           ? [...state.searchResults, ...action.payload.results]
           : action.payload.results;
@@ -121,7 +120,6 @@ export const fetchTrendingMovies = () => async (dispatch) => {
 
 export const searchMovies = (query, page = 1, append = false) => async (dispatch, getState) => {
   try {
-    // If it's the same search query and we're just loading more pages
     const { lastSearch } = getState().movies;
     const isLoadingMore = lastSearch === query && append;
     

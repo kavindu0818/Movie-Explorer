@@ -4,7 +4,6 @@ import { Link, Navigate, useLocation } from 'react-router-dom';
 import { signupUser, clearError } from '../redux/slices/authSlice';
 import { FaUser, FaEnvelope, FaLock, FaExclamationCircle } from 'react-icons/fa';
 
-// Using functional component for SignUp
 const SignUp = () => {
   const [formData, setFormData] = useState({
     username: '',
@@ -81,8 +80,7 @@ const SignUp = () => {
       ...formData,
       [name]: value,
     });
-    
-    // Clear the specific error when user types
+
     if (formErrors[name]) {
       setFormErrors({
         ...formErrors,
@@ -90,8 +88,7 @@ const SignUp = () => {
       });
     }
   };
-  
-  // If user is already authenticated or signup was successful, redirect
+
   if (isAuthenticated || redirectToReferrer) {
     return <Navigate to={from} replace />;
   }

@@ -64,12 +64,9 @@ export const {
 export const loginUser = (credentials) => async (dispatch) => {
   try {
     dispatch(loginStart());
-    
-    // This is a mock login - in a real app you would make an API call
-    // Simulating API call with setTimeout
+
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Mock successful login
+
     if (credentials.username === 'user' && credentials.password === 'password') {
       const user = {
         id: '1',
@@ -91,12 +88,9 @@ export const loginUser = (credentials) => async (dispatch) => {
 export const signupUser = (userData) => async (dispatch) => {
   try {
     dispatch(signupStart());
-    
-    // This is a mock signup - in a real app you would make an API call
-    // Simulating API call with setTimeout
+
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Mock successful signup
+
     const user = {
       id: '1',
       username: userData.username,

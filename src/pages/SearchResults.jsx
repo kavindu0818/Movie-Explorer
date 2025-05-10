@@ -12,7 +12,6 @@ const SearchResults = () => {
   const { searchResults, loading, error, pagination, lastSearch, filters } = useSelector(state => state.movies);
   const [currentQuery, setCurrentQuery] = useState('');
 
-  // Get query from URL
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const query = params.get('q');
@@ -20,7 +19,7 @@ const SearchResults = () => {
     if (query) {
       setCurrentQuery(query);
       
-      // Only search if it's a new query or if there are no results
+
       if (query !== lastSearch || searchResults.length === 0) {
         dispatch(clearSearchResults());
         dispatch(searchMovies(query));
@@ -35,7 +34,7 @@ const SearchResults = () => {
   };
 
   const handleApplyFilters = () => {
-    // When filters change, we need to search again
+
     if (currentQuery) {
       dispatch(clearSearchResults());
       dispatch(searchMovies(currentQuery));

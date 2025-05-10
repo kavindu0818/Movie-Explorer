@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { loginUser, clearError } from '../redux/slices/authSlice';
 import { FaLock, FaUser, FaExclamationCircle } from 'react-icons/fa';
 
-// Using class component for Login
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,6 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    // Clear any existing auth errors when component mounts
     this.props.clearError();
   }
 
@@ -79,7 +78,6 @@ class Login extends Component {
     const { from } = this.props.location?.state || { from: { pathname: '/' } };
     const { formErrors } = this.state;
 
-    // If user is already authenticated or login was successful, redirect
     if (isAuthenticated || this.state.redirectToReferrer) {
       return <Navigate to={from} replace />;
     }

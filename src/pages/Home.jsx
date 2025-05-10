@@ -16,7 +16,6 @@ const Home = () => {
     dispatch(fetchTrendingMovies());
   }, [dispatch]);
 
-  // Set a random trending movie as the featured movie
   useEffect(() => {
     if (trending.length > 0) {
       const randomIndex = Math.floor(Math.random() * Math.min(trending.length, 5));
@@ -36,7 +35,7 @@ const Home = () => {
               backgroundImage: `url(${getImageUrl(featuredMovie.backdrop_path, 'original')})`,
             }}
           >
-            {/* Gradient Overlay */}
+
             <div 
               className="absolute inset-0" 
               style={{ 
@@ -45,7 +44,7 @@ const Home = () => {
             ></div>
           </div>
 
-          {/* Content */}
+
           <div className="absolute inset-0 flex items-center">
             <div className="container-custom">
               <div className="max-w-2xl">
@@ -95,7 +94,6 @@ const Home = () => {
         </section>
       )}
 
-      {/* Trending Movies Section */}
       <section className="py-12">
         <div className="container-custom">
           <h2 className="text-2xl md:text-3xl font-bold mb-8">Trending Movies</h2>
