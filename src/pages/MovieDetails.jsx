@@ -159,7 +159,7 @@ const MovieDetails = () => {
                 
                 <div className="flex flex-wrap gap-4">
                   {trailer && (
-                    <a 
+                    <a
                       href={`https://www.youtube.com/watch?v=${trailer.key}`}
                       target="_blank"
                       rel="noopener noreferrer"
