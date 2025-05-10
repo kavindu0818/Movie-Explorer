@@ -47,13 +47,13 @@ const MovieCard = ({ movie }) => {
             <span className="text-white text-lg font-semibold">View Details</span>
           </div>
           
-          {/* Rating badge */}
+
           <div className="absolute top-2 left-2 bg-black bg-opacity-75 text-white text-sm px-2 py-1 rounded-full flex items-center">
             <FaStar className="text-yellow-400 mr-1" />
             <span>{movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A'}</span>
           </div>
 
-          {/* Favorite button */}
+         
           {isAuthenticated && (
             <button 
               onClick={handleFavoriteClick}
