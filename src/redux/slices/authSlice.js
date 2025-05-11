@@ -60,7 +60,7 @@ export const {
   clearError,
 } = authSlice.actions;
 
-// Async thunk actions
+
 export const loginUser = (credentials) => async (dispatch) => {
   try {
     dispatch(loginStart());

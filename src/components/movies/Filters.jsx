@@ -54,7 +54,7 @@ const Filters = ({ onApplyFilters }) => {
     setIsOpen(false);
   };
 
-  // Generate last 70 years for the year select
+
   const years = [];
   const currentYear = new Date().getFullYear();
   for (let i = 0; i < 70; i++) {
@@ -142,9 +142,9 @@ const Filters = ({ onApplyFilters }) => {
   );
 };
 
-// Add prop validation for onApplyFilters
+
 Filters.propTypes = {
-  onApplyFilters: PropTypes.func, // Validate onApplyFilters as a function
+  onApplyFilters: PropTypes.func,
 };
 
 export default Filters;

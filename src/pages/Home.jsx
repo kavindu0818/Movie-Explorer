@@ -6,6 +6,7 @@ import { getImageUrl } from '../services/movieService';
 import MovieGrid from '../components/movies/MovieGrid';
 import SearchBar from '../components/movies/SearchBar';
 import { FaPlay, FaInfoCircle } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 
 const Home = () => {
   const [featuredMovie, setFeaturedMovie] = useState(null);
@@ -151,8 +152,5 @@ const Home = () => {
     </div>
   );
 };
-
-// Import FaHeart from react-icons/fa at the top of the file
-import { FaHeart } from 'react-icons/fa';
 
 export default Home;

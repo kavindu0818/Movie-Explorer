@@ -14,7 +14,7 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Check scroll position
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -24,7 +24,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu on location change
+
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
@@ -49,7 +49,7 @@ const Header = () => {
             <span className="text-2xl font-bold text-netflix-red">MovieFlix</span>
           </Link>
 
-          {/* Desktop Navigation */}
+
           <nav className="hidden md:flex items-center space-x-6">
             <Link to="/" className="nav-link hover:text-netflix-red">Home</Link>
             {isAuthenticated && (
@@ -57,17 +57,17 @@ const Header = () => {
             )}
           </nav>
 
-          {/* Search Bar (Desktop) */}
+
           <div className="hidden md:block w-1/3 max-w-md">
             <SearchBar />
           </div>
 
-          {/* Right Side Actions */}
+
           <div className="flex items-center">
             {/* Theme Toggle */}
             <ThemeToggle />
 
-            {/* Auth Buttons (Desktop) */}
+
             <div className="hidden md:flex items-center ml-4">
               {isAuthenticated ? (
                 <div className="relative group">
@@ -101,7 +101,7 @@ const Header = () => {
               )}
             </div>
 
-            {/* Mobile Menu Button */}
+
             <button 
               className="ml-4 p-2 rounded-md md:hidden focus:outline-none"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -112,7 +112,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-neutral-900 shadow-lg">
           <div className="container-custom py-4">

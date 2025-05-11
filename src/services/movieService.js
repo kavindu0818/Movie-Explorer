@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-// TMDb API configuration
 const API_KEY = '3fd2be6f0c70a2a598f084ddfb75487c'; // This is a demo key for TMDb API
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 
-// Create axios instance
+
 const api = axios.create({
   baseURL: BASE_URL,
   params: {
@@ -14,13 +13,13 @@ const api = axios.create({
   },
 });
 
-// Helper for image URLs
+
 export const getImageUrl = (path, size = 'w500') => {
   if (!path) return 'https://via.placeholder.com/500x750?text=No+Image+Available';
   return `${IMAGE_BASE_URL}/${size}${path}`;
 };
 
-// Get trending movies
+
 const getTrendingMovies = async (timeWindow = 'day') => {
   try {
     const response = await api.get(`/trending/movie/${timeWindow}`);
@@ -31,7 +30,7 @@ const getTrendingMovies = async (timeWindow = 'day') => {
   }
 };
 
-// Search movies
+
 const searchMovies = async (query, page = 1) => {
   try {
     const response = await api.get('/search/movie', {
@@ -48,7 +47,7 @@ const searchMovies = async (query, page = 1) => {
   }
 };
 
-// Get movie details
+
 const getMovieDetails = async (movieId) => {
   try {
     const response = await api.get(`/movie/${movieId}`, {
@@ -63,7 +62,7 @@ const getMovieDetails = async (movieId) => {
   }
 };
 
-// Get movie credits (cast and crew)
+
 const getMovieCredits = async (movieId) => {
   try {
     const response = await api.get(`/movie/${movieId}/credits`);
@@ -74,7 +73,7 @@ const getMovieCredits = async (movieId) => {
   }
 };
 
-// Get movie videos (trailers, teasers, etc.)
+
 const getMovieVideos = async (movieId) => {
   try {
     const response = await api.get(`/movie/${movieId}/videos`);
@@ -85,7 +84,7 @@ const getMovieVideos = async (movieId) => {
   }
 };
 
-// Get movie genres
+
 const getGenres = async () => {
   try {
     const response = await api.get('/genre/movie/list');
@@ -96,7 +95,7 @@ const getGenres = async () => {
   }
 };
 
-// Discover movies by filters
+
 const discoverMovies = async (filters = {}, page = 1) => {
   try {
     const { year, genre, rating } = filters;

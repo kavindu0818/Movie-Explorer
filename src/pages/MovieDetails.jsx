@@ -84,7 +84,7 @@ const MovieDetails = () => {
     );
   }
 
-  // Format runtime to hours and minutes
+
   const formatRuntime = (minutes) => {
     if (!minutes) return 'N/A';
     const hours = Math.floor(minutes / 60);

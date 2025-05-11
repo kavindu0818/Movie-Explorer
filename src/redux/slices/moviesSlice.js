@@ -104,7 +104,7 @@ export const {
   clearMovieDetails,
 } = moviesSlice.actions;
 
-// Thunk actions
+
 export const fetchTrendingMovies = () => async (dispatch) => {
   try {
     dispatch(fetchMoviesStart());
@@ -154,7 +154,7 @@ export const fetchMovieDetails = (movieId) => async (dispatch) => {
       movieService.getMovieVideos(movieId),
     ]);
     
-    // Combine all data
+
     const enrichedDetails = {
       ...details,
       credits,
